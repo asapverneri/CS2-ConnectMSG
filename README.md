@@ -3,6 +3,8 @@
 Simple plugin to announce player connections and disconnections. It has english language available for now, but feel free to add more.
 Tested on Windows.
 
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/asapverneri/CS2-ConnectMSG?style=for-the-badge&label=Version)
+
 ---
 
 ## 📦 Installion
