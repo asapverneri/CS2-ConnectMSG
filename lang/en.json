@@ -1,0 +1,4 @@
+{
+  "playerconnect": "{purple}{0} {green}has connected.",
+  "playerdisconnect": "{purple}{0} {red}has disconnected."
+} 
