@@ -1,16 +1,17 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 
 namespace CS2connectmsg;
 
-// [MinimumApiVersion(159)]
+[MinimumApiVersion(247)]
 public class CS2connectmsg : BasePlugin
 {
     public override string ModuleName => "CS2-ConnectMSG";
     public override string ModuleDescription => "Simple connect/disconnect messages";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.0.0";
+    public override string ModuleVersion => "1.0.1";
 
     public override void Load(bool hotReload)
     {
