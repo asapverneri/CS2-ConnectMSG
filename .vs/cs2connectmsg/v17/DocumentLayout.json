@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\juliu\\Documents\\GitHub\\CS2-ConnectMSG\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54696004-E6B6-4310-A59D-57F0AACC9613}|cs2connectmsg.csproj|c:\\users\\juliu\\documents\\github\\cs2-connectmsg\\cs2connectmsg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54696004-E6B6-4310-A59D-57F0AACC9613}|cs2connectmsg.csproj|solutionrelative:cs2connectmsg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cs2connectmsg.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Documents\\GitHub\\CS2-ConnectMSG\\cs2connectmsg.cs",
+              "RelativeDocumentMoniker": "cs2connectmsg.cs",
+              "ToolTip": "C:\\Users\\juliu\\Documents\\GitHub\\CS2-ConnectMSG\\cs2connectmsg.cs",
+              "RelativeToolTip": "cs2connectmsg.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T01:07:02.77Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
