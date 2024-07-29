@@ -11,11 +11,11 @@ public class CS2connectmsg : BasePlugin
     public override string ModuleName => "CS2-ConnectMSG";
     public override string ModuleDescription => "Simple connect/disconnect messages";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.0.1";
+    public override string ModuleVersion => "1.0.2";
 
     public override void Load(bool hotReload)
     {
-        Console.WriteLine($"[{ModuleName}] loaded successfully!");
+        Console.WriteLine($"[{ModuleName}] loaded successfully! (Version {ModuleVersion})");
     }
 
     [GameEventHandler]
@@ -55,6 +55,12 @@ public class CS2connectmsg : BasePlugin
 
         if (player.IsValid)
         {
+            if(reason == 54 || reason == 55 || reason == 57)
+            {
+                info.DontBroadcast = true;
+                return HookResult.Continue;
+            }
+
             Console.WriteLine($"[{ModuleName}] {Name} has disconnected!");
             Server.PrintToChatAll($"{Localizer["playerdisconnect", Name]}");
 
