@@ -1,4 +1,6 @@
 {
-  "playerconnect": "{purple}{0} {green}has connected.",
-  "playerdisconnect": "{purple}{0} {red}has disconnected."
+  "playerconnect": "{purple}{0} {green}liittyi palvelimelle [{1}]",
+  "playerdisconnect": "{purple}{0} {red}poistui [{1}]",
+  "playerwelcomemsg": "Moi {purple}{0}{default}, Tervetuloa {blue}Peliluolan {default}awikka servulle!",
+  "playerwelcomemsgnextline": "{default}Kirjoittamalla {green}!info {default}näät hyödyllisiä komentoja ;)"
 } 
