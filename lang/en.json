@@ -2,5 +2,11 @@
   "playerconnect": "{purple}{0} {green}liittyi palvelimelle [{1}]",
   "playerdisconnect": "{purple}{0} {red}poistui [{1}]",
   "playerwelcomemsg": "Moi {purple}{0}{default}, Tervetuloa {blue}Peliluolan {default}awikka servulle!",
-  "playerwelcomemsgnextline": "{default}Kirjoittamalla {green}!info {default}näät hyödyllisiä komentoja ;)"
+  "playerwelcomemsgnextline": "{default}Kirjoittamalla {green}!info {default}näät hyödyllisiä komentoja ;)",
+
+  "Discord.ConnectTitle": "{0}",
+  "Discord.ConnectDescription": "liittyi palvelimelle [{0} - {1}]\n[Steam Profiili](https://steamcommunity.com/profiles/{1})",
+
+  "Discord.DisconnectTitle": "{0}",
+  "Discord.DisconnectDescription": "poistui palvelimelta [{0} - {1}]\n[Steam Profiili](https://steamcommunity.com/profiles/{1})"
 } 

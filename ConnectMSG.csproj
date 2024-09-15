@@ -10,6 +10,7 @@
     <ItemGroup>
         <PackageReference Include="CounterStrikeSharp.API" Version="*" />
         <PackageReference Include="MaxMind.GeoIP2" Version="5.2.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <ItemGroup>

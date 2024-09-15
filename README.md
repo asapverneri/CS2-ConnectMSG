@@ -13,6 +13,17 @@ Tested on Windows.
 - Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) & [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master)
 - Download the latest release from the releases tab and copy it into the counterstrikesharp plugins folder.
 
+**Example config:**
+```json
+{
+  "PlayerWelcomeMessage": true,
+  "Timer": 5,
+  "LogMessagesToDiscord": true,
+  "DiscordWebhook": "https://discord.com/api/webhooks/xxxxxx/xxxxxx",
+  "ConfigVersion": 1
+}
+```
+
 ---
 
 ## 📫 Contact

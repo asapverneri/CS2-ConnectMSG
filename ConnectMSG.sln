@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cs2connectmsg", "cs2connectmsg.csproj", "{54696004-E6B6-4310-A59D-57F0AACC9613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectMSG", "ConnectMSG.csproj", "{54696004-E6B6-4310-A59D-57F0AACC9613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
