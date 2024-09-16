@@ -1,12 +1,14 @@
 {
-  "playerconnect": "{purple}{0} {green}liittyi palvelimelle [{1}]",
-  "playerdisconnect": "{purple}{0} {red}poistui [{1}]",
-  "playerwelcomemsg": "Moi {purple}{0}{default}, Tervetuloa {blue}Peliluolan {default}awikka servulle!",
-  "playerwelcomemsgnextline": "{default}Kirjoittamalla {green}!info {default}näät hyödyllisiä komentoja ;)",
+  "playerconnect": "{purple}{0} {green}connected [{1}]",
+  "playerdisconnect": "{purple}{0} {red}disconnected [{1}]",
+  "playerwelcomemsg": "Hi {purple}{0}{default}, Welcome to {blue}My server{default}. Hope you enjoy!",
+  "playerwelcomemsgnextline": "{default}Please {green}read our rules{default}.",
 
   "Discord.ConnectTitle": "{0}",
-  "Discord.ConnectDescription": "liittyi palvelimelle [{0} - {1}]\n[Steam Profiili](https://steamcommunity.com/profiles/{1})",
+  "Discord.ConnectDescription": "connected [{0} - {1}]\n[Steam](https://steamcommunity.com/profiles/{1})",
 
   "Discord.DisconnectTitle": "{0}",
-  "Discord.DisconnectDescription": "poistui palvelimelta [{0} - {1}]\n[Steam Profiili](https://steamcommunity.com/profiles/{1})"
+  "Discord.DisconnectDescription": "disconnected [{0} - {1}]\n[Steam](https://steamcommunity.com/profiles/{1})",
+
+  "Discord.Footer": "ConnectMSG (1.5) by verneri"
 } 

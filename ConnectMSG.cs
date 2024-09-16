@@ -29,7 +29,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
     public override string ModuleName => "ConnectMSG";
     public override string ModuleDescription => "Simple connect/disconnect messages";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.4";
+    public override string ModuleVersion => "1.5";
 
     public static Dictionary<ulong, bool> LoopConnections = new Dictionary<ulong, bool>();
 
@@ -152,11 +152,12 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
             var embed = new
             {
                 title = $"{Localizer["Discord.ConnectTitle", playerName]}",
+                url = $"https://steamcommunity.com/profiles/{steamID}",
                 description = $"{Localizer["Discord.ConnectDescription", country, steamID]}",
                 color = 65280,
                 footer = new
                 {
-                    text = $"ConnectMSG ({ModuleVersion}) by verneri"
+                    text = $"{Localizer["Discord.Footer"]}"
                 }
             };
 
@@ -184,11 +185,12 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
             var embed = new
             {
                 title = $"{Localizer["Discord.DisconnectTitle", playerName]}",
+                url = $"https://steamcommunity.com/profiles/{steamID}",
                 description = $"{Localizer["Discord.DisconnectDescription", country, steamID]}",
                 color = 16711680,
                 footer = new
                 {
-                    text = $"ConnectMSG ({ModuleVersion}) by verneri"
+                    text = $"{Localizer["Discord.Footer"]}"
                 }
             };
 
