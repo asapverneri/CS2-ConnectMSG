@@ -7,6 +7,7 @@ using MaxMind.GeoIP2;
 using MaxMind.GeoIP2.Exceptions;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Xml.Linq;
@@ -18,9 +19,7 @@ public class ConnectMSGConfig : BasePluginConfig
 {
     [JsonPropertyName("PlayerWelcomeMessage")] public bool PlayerWelcomeMessage { get; set; } = true;
     [JsonPropertyName("Timer")] public float Timer { get; set; } = 5.0f;
-
     [JsonPropertyName("LogMessagesToDiscord")] public bool LogMessagesToDiscord { get; set; } = true;
-
     [JsonPropertyName("DiscordWebhook")] public string DiscordWebhook { get; set; } = "";
 
 }
@@ -29,7 +28,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
     public override string ModuleName => "ConnectMSG";
     public override string ModuleDescription => "Simple connect/disconnect messages";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.5";
+    public override string ModuleVersion => "1.6";
 
     public static Dictionary<ulong, bool> LoopConnections = new Dictionary<ulong, bool>();
 
@@ -53,6 +52,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         var steamid = player.SteamID;
         var Name = player.PlayerName;
         string country = GetCountry(player.IpAddress?.Split(":")[0] ?? "Unknown");
+        string playerip = player.IpAddress?.Split(":")[0] ?? "Unknown";
 
         if (LoopConnections.ContainsKey(steamid))
         {
@@ -64,7 +64,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
 
         if (Config.LogMessagesToDiscord)
         {
-            _ = SendWebhookMessageAsEmbedConnected(player.PlayerName, player.SteamID, country);
+            _ = SendWebhookMessageAsEmbedConnected(player.PlayerName, player.SteamID, playerip, country);
         }
 
         if (Config.PlayerWelcomeMessage)
@@ -99,9 +99,10 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         var reason = @event.Reason;
         var Name = player.PlayerName;
         string country = GetCountry(player.IpAddress?.Split(":")[0] ?? "Unknown");
+        string playerip = player.IpAddress?.Split(":")[0] ?? "Unknown";
 
-        
-            if(reason == 54 || reason == 55 || reason == 57)
+
+        if (reason == 54 || reason == 55 || reason == 57)
             {
                 if (!LoopConnections.ContainsKey(player.SteamID))
                 {
@@ -119,7 +120,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         Server.PrintToChatAll($"{Localizer["playerdisconnect", Name, country]}");
 
         if (Config.LogMessagesToDiscord) {
-            _ = SendWebhookMessageAsEmbedDisconnected(player.PlayerName, player.SteamID, country);
+            _ = SendWebhookMessageAsEmbedDisconnected(player.PlayerName, player.SteamID, playerip, country);
         }
 
 
@@ -145,7 +146,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         }
     }
 
-    public async Task SendWebhookMessageAsEmbedConnected(string playerName, ulong steamID, string country)
+    public async Task SendWebhookMessageAsEmbedConnected(string playerName, ulong steamID, string playerip, string country)
     {
         using (var httpClient = new HttpClient())
         {
@@ -153,7 +154,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
             {
                 title = $"{Localizer["Discord.ConnectTitle", playerName]}",
                 url = $"https://steamcommunity.com/profiles/{steamID}",
-                description = $"{Localizer["Discord.ConnectDescription", country, steamID]}",
+                description = $"{Localizer["Discord.ConnectDescription", country, steamID, playerip]}",
                 color = 65280,
                 footer = new
                 {
@@ -178,7 +179,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         }
     }
 
-    public async Task SendWebhookMessageAsEmbedDisconnected(string playerName, ulong steamID, string country)
+    public async Task SendWebhookMessageAsEmbedDisconnected(string playerName, ulong steamID, string playerip, string country)
     {
         using (var httpClient = new HttpClient())
         {
@@ -186,7 +187,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
             {
                 title = $"{Localizer["Discord.DisconnectTitle", playerName]}",
                 url = $"https://steamcommunity.com/profiles/{steamID}",
-                description = $"{Localizer["Discord.DisconnectDescription", country, steamID]}",
+                description = $"{Localizer["Discord.DisconnectDescription", country, steamID, playerip]}",
                 color = 16711680,
                 footer = new
                 {

@@ -5,10 +5,10 @@
   "playerwelcomemsgnextline": "{default}Please {green}read our rules{default}.",
 
   "Discord.ConnectTitle": "{0}",
-  "Discord.ConnectDescription": "connected [{0} - {1}]\n[Steam](https://steamcommunity.com/profiles/{1})",
+  "Discord.ConnectDescription": "connected [{0} - {1} - {2}]\n[Steam](https://steamcommunity.com/profiles/{1})",
 
   "Discord.DisconnectTitle": "{0}",
-  "Discord.DisconnectDescription": "disconnected [{0} - {1}]\n[Steam](https://steamcommunity.com/profiles/{1})",
+  "Discord.DisconnectDescription": "disconnected [{0} - {1} - {2]\n[Steam](https://steamcommunity.com/profiles/{1})",
 
-  "Discord.Footer": "ConnectMSG (1.5) by verneri"
+  "Discord.Footer": "ConnectMSG (1.6) by verneri"
 } 
