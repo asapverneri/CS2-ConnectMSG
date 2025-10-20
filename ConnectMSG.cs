@@ -2,15 +2,11 @@ using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
-using CounterStrikeSharp.API.Modules.Entities;
 using MaxMind.GeoIP2;
 using MaxMind.GeoIP2.Exceptions;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Net;
 using System.Text;
 using System.Text.Json.Serialization;
-using System.Xml.Linq;
 
 namespace ConnectMSG;
 
@@ -28,7 +24,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
     public override string ModuleName => "ConnectMSG";
     public override string ModuleDescription => "Simple connect/disconnect messages";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.6";
+    public override string ModuleVersion => "1.7";
 
     public static Dictionary<ulong, bool> LoopConnections = new Dictionary<ulong, bool>();
 
@@ -46,9 +42,9 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
     [GameEventHandler(HookMode.Pre)]
     public HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
     {
-        if (@event == null) return HookResult.Handled;
+        if (@event == null) return HookResult.Continue;
         var player = @event.Userid;
-        if (player == null || !player.IsValid || player.IsBot) return HookResult.Handled;
+        if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
         var steamid = player.SteamID;
         var Name = player.PlayerName;
         string country = GetCountry(player.IpAddress?.Split(":")[0] ?? "Unknown");
@@ -77,25 +73,25 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         }
 
 
-        return HookResult.Handled;
+        return HookResult.Continue;
     }
 
     [GameEventHandler(HookMode.Pre)]
     public HookResult OnPlayerDisconnectPre(EventPlayerDisconnect @event, GameEventInfo info)
     {
-        if (@event == null) return HookResult.Handled;
+        if (@event == null) return HookResult.Continue;
         info.DontBroadcast = true;
 
 
-        return HookResult.Handled;
+        return HookResult.Continue;
     }
 
     [GameEventHandler(HookMode.Pre)]
     public HookResult OnPlayerDisconnect(EventPlayerDisconnect @event, GameEventInfo info)
     {
-        if (@event == null) return HookResult.Handled;
+        if (@event == null) return HookResult.Continue;
         var player = @event.Userid;
-        if (player == null || !player.IsValid || player.IsBot) return HookResult.Handled;
+        if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
         var reason = @event.Reason;
         var Name = player.PlayerName;
         string country = GetCountry(player.IpAddress?.Split(":")[0] ?? "Unknown");
@@ -110,7 +106,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
                 }
                 if (LoopConnections.ContainsKey(player.SteamID))
                 {
-                   return HookResult.Handled;
+                   return HookResult.Continue;
                 }
 
             }
@@ -124,7 +120,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
         }
 
 
-        return HookResult.Handled;
+        return HookResult.Continue;
     }
 
 
