@@ -24,7 +24,7 @@ public class ConnectMSG : BasePlugin, IPluginConfig<ConnectMSGConfig>
     public override string ModuleName => "ConnectMSG";
     public override string ModuleDescription => "Simple connect/disconnect messages";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.7";
+    public override string ModuleVersion => "1.0.8";
 
     public static Dictionary<ulong, bool> LoopConnections = new Dictionary<ulong, bool>();
 

@@ -8,7 +8,7 @@
   "Discord.ConnectDescription": "connected [{0} - {1} - {2}]\n[Steam](https://steamcommunity.com/profiles/{1})",
 
   "Discord.DisconnectTitle": "{0}",
-  "Discord.DisconnectDescription": "disconnected [{0} - {1} - {2]\n[Steam](https://steamcommunity.com/profiles/{1})",
+  "Discord.DisconnectDescription": "disconnected [{0} - {1} - {2}]\n[Steam](https://steamcommunity.com/profiles/{1})",
 
-  "Discord.Footer": "ConnectMSG (1.7) by verneri"
+  "Discord.Footer": "ConnectMSG (1.0.8) by verneri"
 } 
