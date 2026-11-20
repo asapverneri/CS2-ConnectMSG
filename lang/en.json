@@ -1,6 +1,4 @@
 {
-  "playerconnect": "{purple}{0} {green}connected [{1}]",
-  "playerdisconnect": "{purple}{0} {red}disconnected [{1}]",
   "playerwelcomemsg": "Hi {purple}{0}{default}, Welcome to {blue}My server{default}. Hope you enjoy!",
   "playerwelcomemsgnextline": "{default}Please {green}read our rules{default}.",
 
@@ -10,5 +8,5 @@
   "Discord.DisconnectTitle": "{0}",
   "Discord.DisconnectDescription": "disconnected [{0} - {1} - {2}]\n[Steam](https://steamcommunity.com/profiles/{1})",
 
-  "Discord.Footer": "ConnectMSG (1.0.8) by verneri"
+  "Discord.Footer": "ConnectMSG (1.1.0) by verneri"
 } 

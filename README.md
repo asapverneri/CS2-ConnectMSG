@@ -5,6 +5,7 @@ Tested on Windows.
 
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/asapverneri/CS2-ConnectMSG?style=for-the-badge&label=Version)
 ![Last Commit](https://img.shields.io/github/last-commit/asapverneri/CS2-ConnectMSG?style=for-the-badge)
+[![Join our Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/tv44kYjZRe)
 
 ---
 
@@ -16,10 +17,25 @@ Tested on Windows.
 **Example config:**
 ```json
 {
-  "PlayerWelcomeMessage": true,
+  "PlayerWelcomeMessage": false,
+  "ConnectMessages": [
+    {
+      "Permission": "#css/vipplus",
+      "Message": "{GOLD}VIP+ {PURPLE}{NAME} {GREEN}connected [{COUNTRY}]"
+    },
+    {
+      "Permission": "@css/vip",
+      "Message": "{GOLD}VIP {PURPLE}{NAME} {GREEN}connected [{COUNTRY}]"
+    },
+    {
+      "Permission": "",
+      "Message": "{PURPLE}{NAME} {GREEN}connected [{COUNTRY}]"
+    }
+  ],
+  "PlayerDisconnectMessage": "{PURPLE}{NAME} {RED}disconnected [{COUNTRY}]",
   "Timer": 5,
   "LogMessagesToDiscord": true,
-  "DiscordWebhook": "https://discord.com/api/webhooks/xxxxxx/xxxxxx",
+  "DiscordWebhook": "https://discord.com/api/webhooks/xxxxxx",
   "ConfigVersion": 1
 }
 ```
@@ -29,7 +45,7 @@ Tested on Windows.
 ## 📫 Contact
 
 <div align="center">
-  <a href="https://discordapp.com/users/367644530121637888">
+  <a href="https://discord.gg/tv44kYjZRe">
     <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
   </a>
   <a href="https://steamcommunity.com/id/vvernerii/">
